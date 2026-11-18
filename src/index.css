@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* Brand colors. Use as bg-brand, text-brand, etc. */
+@theme {
+  --color-brand: #f0a030;
+  --color-brand-dark: #d98a14;
+}
+
+body {
+  margin: 0;
+  background-color: #ededeb;
+  color: #111111;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Moving dotted background: a fixed layer behind the whole app.
+   The dots drift slowly. The tile is 22px, so the loop has no jump. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(#c8c8c3 1.2px, transparent 1.2px);
+  background-size: 22px 22px;
+  animation: dots-drift 6s linear infinite;
+}
+
+@keyframes dots-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 22px 22px;
+  }
+}
+
+/* Hazard stripe at the top of every page. The stripes keep moving.
+   The tile is 28px wide, so the loop has no jump. */
+.hazard-stripe {
+  height: 10px;
+  background: linear-gradient(
+    135deg,
+    #f0a030 25%,
+    #111111 25%,
+    #111111 50%,
+    #f0a030 50%,
+    #f0a030 75%,
+    #111111 75%
+  );
+  background-size: 28px 28px;
+  animation: stripe-move 1.2s linear infinite;
+}
+
+@keyframes stripe-move {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 28px 0;
+  }
+}
+
+/* People who turn off animations in their device settings get a still page */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  .hazard-stripe {
+    animation: none;
+  }
+}

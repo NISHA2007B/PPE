@@ -1,0 +1,9 @@
+// Dummy violations. Shape matches the backend contract, plus "zone" (ask Person C to add it).
+export const dummyViolations = [
+  { id: 1, video_id: 1, track_id: 3, frame_number: 120, zone: "general", missing_ppe: ["helmet", "vest"], confidence: 0.91, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+1", clip_path: "https://www.w3schools.com/html/mov_bbb.mp4", status: "pending", created_at: "2026-11-11T09:15:00" },
+  { id: 2, video_id: 1, track_id: 5, frame_number: 245, zone: "welding", missing_ppe: ["gloves"], confidence: 0.78, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+2", clip_path: "", status: "pending", created_at: "2026-11-11T09:16:30" },
+  { id: 3, video_id: 1, track_id: 7, frame_number: 410, zone: "welding", missing_ppe: ["goggles", "gloves"], confidence: 0.84, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+3", clip_path: "", status: "confirmed", created_at: "2026-11-11T09:18:05" },
+  { id: 4, video_id: 2, track_id: 2, frame_number: 90, zone: "general", missing_ppe: ["helmet"], confidence: 0.95, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+4", clip_path: "", status: "rejected", created_at: "2026-11-11T10:02:10" },
+  { id: 5, video_id: 2, track_id: 4, frame_number: 330, zone: "general", missing_ppe: ["boots", "vest"], confidence: 0.66, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+5", clip_path: "", status: "pending", created_at: "2026-11-11T10:05:42" },
+  { id: 6, video_id: 2, track_id: 9, frame_number: 512, zone: "welding", missing_ppe: ["helmet", "goggles", "gloves"], confidence: 0.88, snapshot_path: "https://placehold.co/600x400/45483f/ffffff?text=Violation+6", clip_path: "", status: "pending", created_at: "2026-11-11T10:07:20" },
+];
